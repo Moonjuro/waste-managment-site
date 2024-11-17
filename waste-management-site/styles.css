@@ -1,0 +1,127 @@
+/* Ensure that the body takes full height */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling on body itself */
+}
+
+/* Sidebar styles */
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 3%; /* Fixed width of the sidebar */
+    background-image: linear-gradient(to bottom, rgb(0, 89, 255), rgb(0, 157, 255));
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 10px; /* Add some space for better alignment */
+    justify-content: flex-start; /* Align items from the top */
+}
+
+/* Side buttons */
+.side-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    width: 20px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+}
+
+.side-btn img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Ensures the image stays within bounds */
+}
+
+
+/* Topbar styles */
+#topbar {
+    position: fixed; /* Fixes the topbar at the top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the topbar spans the full width */
+    height: 5%; /* Height of the topbar */
+    background-image: linear-gradient(to right, rgb(0, 89, 255), rgb(0, 157, 255));
+    display: flex;
+    align-items: center; /* Center items vertically */
+    z-index: 20; /* Ensure the topbar is above other content */
+    padding-left: 4%; /* Adjust for the sidebar */
+    margin-bottom: 0; /* Remove extra space */
+}
+
+/* Button styles */
+#topbar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#topbar button img {
+    height: 20px;
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Tab bar styles */
+.tab-bar {
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 1.9%; /* Space for the topbar */
+    z-index: 5;
+    margin-left: 2.7%; /* Push sidebar away */
+}
+
+.tab-bar .tab {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.tab-bar .tab.active {
+    background-color: #aaa;
+}
+
+/* Content area styles */
+.content-area {
+    width: 96%; /* Take up the remaining space (100% - sidebar width) */
+    margin-left: 4%; /* Offset by the width of the sidebar */
+    padding: 10px;
+    padding-top: 7%; /* Add padding equal to the topbar's height to avoid overlap */
+    overflow-y: auto;
+    flex: 1;
+    margin-top: 7%; /* Ensure that the content starts below the topbar */
+    height: calc(100vh - 7%); /* Full height minus the topbar */
+    box-sizing: border-box; /* Make sure padding is considered in height */
+    position: relative; /* Ensure content does not overlap */
+    margin-right: 5%;
+}
+
+
+/* Add some space below the content buttons */
+#add-project-btn,
+#add-energy-btn {
+    width: 100px;
+    margin-left: 3%;
+    background-image: linear-gradient(to bottom, rgb(0, 89, 255), rgb(0, 157, 255));
+    color: white;
+    border-radius: 5px;
+    box-shadow: none;
+}
